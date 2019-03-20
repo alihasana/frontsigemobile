@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><h1></h1></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  <h1>{{ 'home.hello' | translate }}</h1>
+  <ion-item *ngFor="let item of rows">
+    <!-- <ion-avatar slot="start">
+      <img src="/docs/assets/img/avatar-finn.png"></img>
+    </ion-avatar> -->
+    <ion-label >
+      <h2>Name : {{item.name}}</h2>
+      <h3>Age : {{item.age}}</h3>
+      <h3>Gender : {{item.gender}}</h3>
+    </ion-label>
+  </ion-item>
+</ion-list>
+  <ion-fab>
+    <ion-fab-button (click)="goToCreateMember()" class="bottom-right"><ion-icon name="add"></ion-icon></ion-fab-button>
+  </ion-fab>
+
+</ion-content>

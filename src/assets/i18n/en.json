@@ -1,0 +1,13 @@
+{
+  "basic" : {
+    "setting": "Setting",
+    "language": "Language",
+    "date": "Date",
+    "english": "English",
+    "french": "French"
+  },
+  "user": {
+    "first_name": "First Name",
+    "last_name": "Last Name"
+  }
+}

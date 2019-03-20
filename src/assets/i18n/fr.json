@@ -1,0 +1,14 @@
+{
+  "basic" : {
+    "setting": "Parameter",
+    "language": "Langage",
+    "date": "Date",
+    "english": "Anglais",
+    "french": "Française"
+  },
+  "user": {
+    "first_name": "Prénom",
+    "last_name": "Nom de Famile"
+  }
+}
+
