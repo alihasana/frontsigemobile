@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+import { LoginPage } from './login.page';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpLoaderFactory} from '../app.module';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
@@ -17,7 +17,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: LoginPage
       }
     ]),
     TranslateModule.forChild({
@@ -30,6 +30,6 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     // configure the imports
     HttpClientModule
   ],
-  declarations: [HomePage]
+  declarations: [LoginPage]
 })
-export class HomePageModule {}
+export class LoginPageModule {}

@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { Storage } from '@ionic/storage';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-member-search',
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss']
 })
-export class SearchPage {
+export class SearchPage implements OnInit {
   constructor(
-      private router: Router
+      private router: Router,
+      private translate: TranslateService,
+      private storage: Storage
   ) {
   }
   rows = [
@@ -559,7 +563,20 @@ export class SearchPage {
       'this': 34
     }
   ];
-  goToCreateMember() {
-    this.router.navigateByUrl('tabs/student/create');
+  ngOnInit() {
+    this.getLanguage();
+  }
+  goToCreateStudent() {
+    this.router.navigateByUrl('tabs/member/student_create');
+  }
+
+  getLanguage() {
+    this.storage.get('setting_language').then(res => {
+      if (res) {
+        return this.translate.use(res);
+      } else {
+        return this.translate.use('en');
+      }
+    });
   }
 }

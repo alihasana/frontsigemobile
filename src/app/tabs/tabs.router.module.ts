@@ -8,10 +8,10 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'student',
+        path: 'member',
         children: [
-            { path: '', loadChildren: '../member/student/search/search.module#MemberSearchPageModule'},
-            { path: 'create', loadChildren: '../member/student/create/create.module#CreatePageModule' }]
+            { path: '', loadChildren: '../member/search/search.module#MemberSearchPageModule'},
+            { path: 'student_create', loadChildren: '../member/create/create.module#CreatePageModule' }]
       },
       {
         path: 'class',
@@ -21,20 +21,16 @@ const routes: Routes = [
         path: 'tab3',
         children: [{path: '', loadChildren: '../tab3/tab3.module#Tab3PageModule'}        ]
       },
-      { path: 'setting', loadChildren: './setting/setting.module#SettingPageModule' },
-      { path: '', redirectTo: '/tabs/student', pathMatch: 'full' }
+      { path: 'setting', loadChildren: '../setting/setting.module#SettingPageModule' },
+      { path: '', redirectTo: '/tabs/member', pathMatch: 'full' }
     ]
   },
   {
-    path: 'home',
-    loadChildren: '../home/home.module#HomePageModule'
+    path: 'login',
+    loadChildren: '../login/login.module#LoginPageModule'
   },
   {
-    path: 'list',
-    loadChildren: '../list/list.module#ListPageModule'
-  },
-  {
-    path: '', redirectTo: '/tabs/student', pathMatch: 'full'
+    path: '', redirectTo: '/tabs/member', pathMatch: 'full'
   }
 ];
 

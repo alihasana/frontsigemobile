@@ -47,7 +47,7 @@ export class AuthenticationService {
       return this.storage.set(TOKEN_KEY, token).then(res => {
           console.log(res);
           this.authenticationState.next(true);
-          this.router.navigate(['tabs/tab1']);
+          this.router.navigate(['tabs/member']);
         });
     });
   }

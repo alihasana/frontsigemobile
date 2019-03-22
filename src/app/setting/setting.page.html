@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{'basic.setting' | translate }}</ion-title>
+    <ion-icon  slot="start" size="large" (click)="previousUrl()" name="arrow-back"></ion-icon>
+    <ion-title>
+      {{'basic.setting' | translate }}
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,27 +11,8 @@
   <ion-list>
     <ion-item>
       <ion-label>{{'basic.language' | translate }}</ion-label>
-      <ion-select>
-        <ion-select-option type="button" selected (click)="useLanguage('en')">{{'basic.english' | translate }}</ion-select-option>
-        <ion-select-option type="button" (click)="useLanguage('fr')">{{'basic.french' | translate }}</ion-select-option>
-      </ion-select>
+      <ion-button fill="outline" (click)="useLanguage('en')">en</ion-button>
+      <ion-button fill="outline" (click)="useLanguage('fr')">fr</ion-button>
     </ion-item>
   </ion-list>
-  <button class="btn btn-primary" (click)="useLanguage('en')">en</button>
-  <button class="btn btn-primary" (click)="useLanguage('fr')">fr</button>
-
-  <ion-fab vertical="bottom" horizontal="end">
-    <ion-fab-button>Share</ion-fab-button>
-
-    <ion-fab-list side="top">
-      <ion-fab-button>Facebook</ion-fab-button>
-      <ion-fab-button>Twitter</ion-fab-button>
-      <ion-fab-button>Youtube</ion-fab-button>
-    </ion-fab-list>
-
-    <ion-fab-list side="start">
-      <ion-fab-button>Vimeo</ion-fab-button>
-    </ion-fab-list>
-
-  </ion-fab>
 </ion-content>

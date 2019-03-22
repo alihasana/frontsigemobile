@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  APIEndpoint: 'http://localhost:3000',
+  TOKEN_KEY: 'auth-token'
 };

@@ -1,13 +1,40 @@
 {
   "basic" : {
-    "setting": "Setting",
-    "language": "Language",
+    "admin": "Administrator",
+    "active": "Active",
+    "create": "Create",
     "date": "Date",
     "english": "English",
-    "french": "French"
+    "female": "Female",
+    "french": "French",
+    "in_active": "In-active",
+    "language": "Language",
+    "male": "Male",
+    "prof": "Professor",
+    "setting": "Settings",
+    "sign_in": "Login",
+    "sign_out": "Logout",
+    "student": "Student",
+    "submit": "Submit"
   },
   "user": {
     "first_name": "First Name",
-    "last_name": "Last Name"
+    "last_name": "Last Name",
+    "email": "Email",
+    "mobile_no": "Mobile N°",
+    "telephone": "Telephone N°",
+    "status": "Status",
+    "class": "Class",
+    "in_charge": "In-Charge",
+    "dob": "Date of Birth",
+    "gender": "Gender",
+    "address": "Address",
+    "town": "Town",
+    "cp": "Pin-code"
+  },
+  "page": {
+    "member": "Member",
+    "subject": "Subject",
+    "class": "Class"
   }
 }

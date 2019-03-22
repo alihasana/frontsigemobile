@@ -1,9 +1,146 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Create Student</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{'basic.create' | translate }} - {{'basic.student' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onRegisterMember(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">{{'user.status' | translate }}</ion-label>
+        <ion-select
+                name="status"
+                ngModel
+                type="text"
+                required>
+          <ion-select-option value="true">{{'basic.active' | translate }}</ion-select-option>
+          <ion-select-option value="false">{{'basic.in_active' | translate }}</ion-select-option>
+        </ion-select>
+      </ion-item>
 
+      <ion-item>
+        <ion-label position="floating">{{'user.class' | translate }}</ion-label>
+        <ion-input
+                name="class"
+                ngModel
+                type="text"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.in_charge' | translate }}</ion-label>
+        <ion-input
+                name="inCharge"
+                ngModel
+                type="text"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.last_name' | translate }}</ion-label>
+        <ion-input
+                name="lastname"
+                ngModel
+                type="text"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.first_name' | translate }}</ion-label>
+        <ion-input
+                name="firstname"
+                ngModel
+                type="text"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.dob' | translate }}</ion-label>
+        <ion-datetime
+                name="dob"
+                ngModel
+                display-format="DD.MM.YYYY"
+                required></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.gender' | translate }}</ion-label>
+        <ion-select
+                name="gender"
+                ngModel
+                type="text"
+                required>
+          <ion-select-option value="male">{{'basic.male' | translate }}</ion-select-option>
+          <ion-select-option value="female">{{'basic.female' | translate }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.mobile_no' | translate }}</ion-label>
+        <ion-input
+                name="mobileNo"
+                ngModel
+                type="tel"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.telephone' | translate }}</ion-label>
+        <ion-input
+                name="telephone"
+                ngModel
+                type="tel"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.email' | translate }}</ion-label>
+        <ion-input
+                name="email"
+                ngModel
+                type="email"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.address' | translate }}</ion-label>
+        <ion-input
+                name="address"
+                ngModel
+                type="text"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.cp' | translate }}</ion-label>
+        <ion-input
+                name="cp"
+                ngModel
+                type="text"
+                required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{'user.town' | translate }}</ion-label>
+        <ion-input
+                name="town"
+                ngModel
+                type="text"
+                required></ion-input>
+      </ion-item>
+
+      <ion-button
+              size="large"
+              type="submit"
+              expand="block"
+              [disabled]="!f.valid">
+        {{'basic.submit' | translate }}
+      </ion-button>
+    </ion-list>
+  </form>
 </ion-content>
+

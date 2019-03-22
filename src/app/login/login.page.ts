@@ -2,11 +2,11 @@ import { Component, OnInit  } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-login',
+  templateUrl: 'login.page.html',
+  styleUrls: ['login.page.scss'],
 })
-export class HomePage implements OnInit  {
+export class LoginPage implements OnInit  {
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit () {
