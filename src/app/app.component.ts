@@ -14,6 +14,7 @@ import { filter, pairwise } from 'rxjs/operators';
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
+  public toto: String = 'Zaza';
 
   constructor(
     private platform: Platform,

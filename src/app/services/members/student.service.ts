@@ -11,26 +11,40 @@ const APIEndpoint = environment.APIEndpoint;
 })
 export class StudentService {
   public currentUser: any;
+
   constructor(
       private plt: Platform,
-      private http: HttpClient,
-      private storage: Storage
+      private storage: Storage,
+      private http: HttpClient
   ) {
     this.storage.get('auth-token').then(res => {
       this.currentUser = res;
     });
   }
 
-  registerMember(members) {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.currentUser
+  postStudentService(members) {
+    return this.storage.get('auth-token').then(res => {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + res
+      });
+      const options = {
+        headers: headers
+      }
+      return this.http.post(APIEndpoint + '/member/', members, options);
     });
-    const options = {
-      headers: headers
-    }
-    return this.http.post(APIEndpoint + '/member/', members, options).subscribe(data => {
-      console.log('Create Student : ' + data);
+  }
+
+  getStudentService() {
+   return this.storage.get('auth-token').then(res => {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + res
+      });
+      const options = {
+        headers: headers
+      };
+      return this.http.get(APIEndpoint + '/member/', options);
     });
   }
 }

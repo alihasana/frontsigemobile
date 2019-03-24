@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {StudentService} from '../../services/members/student.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -9,11 +10,20 @@ import {StudentService} from '../../services/members/student.service';
 })
 export class CreatePage implements OnInit {
 
-  constructor(private studentService: StudentService) { }
+  constructor(
+      private router: Router,
+      private studentService: StudentService
+  ) { }
 
   ngOnInit() {
   }
   onRegisterMember(form: NgForm) {
-    this.studentService.registerMember(form.value);
+    this.studentService.postStudentService(form.value).then((res: any) => {
+      res.subscribe(response => {
+        if (response.success) {
+          this.router.navigateByUrl('tabs/member');
+        }
+      });
+    });
   }
 }
